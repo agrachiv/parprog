@@ -15,7 +15,7 @@ int main(int argc, char** argv)
     {
         if ( a[current_prime] != CROSSED_NUMBER)
         {
-            #pragma omp parallel  //parallelize our algorithm
+            #pragma omp parallel
             {
                 int i;
                 #pragma omp for

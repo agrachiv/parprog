@@ -13,13 +13,13 @@ int main(int argc, char** argv)
 
     for ( int current_prime = 2; current_prime < calculation_limit; current_prime++)
     {
-        if ( a[current_prime] != CROSSED_NUMBER)
+        if ( a[current_prime] != CROSSED_NUMBER) //Since we crossed everything not prime we will get inside the loop at next prime number
         {
             #pragma omp parallel
             {
                 int i;
-                #pragma omp for
-                for ( i = 2 * current_prime; i < calculation_limit; i += current_prime )
+                #pragma omp for //Here things go parallel!
+                for ( i = 2 * current_prime; i < calculation_limit; i += current_prime ) //We just cross all numbers that are multiple of current_prime
                     a[i] = CROSSED_NUMBER;
             }
         }

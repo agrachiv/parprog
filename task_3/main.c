@@ -14,11 +14,11 @@ int main()
 	b[array_size - 1] = 0;
 	#pragma omp parallel
 	{
-		#pragma omp for
+		#pragma omp for //Here things go parallel!
 		for ( int i = 1; i < array_size - 1; i++)
             b[i] = calculate_average( a[i-1], a[i], a[i+1]);
 	}
 	for (int i = 1; i < array_size - 1; i+=5000)
         printf("b[%d] = %d\n", i, b[i]);
 }
-	
+

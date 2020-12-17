@@ -25,11 +25,11 @@ int main(int argc, char** argv)
         }
     }
 
-    printf( "Prime numbers less than %d:\n", calculation_limit);
-    for ( int i = 1; i < calculation_limit; i++)
+    int number_of_primes = 0;
+    for ( int i = 2; i < calculation_limit; i++)
         if ( a[i] != CROSSED_NUMBER)
-            printf( "%d ", i);
-    printf( "\n");
+            number_of_primes++;
+    printf( "There are %d prime numbers less or equal than %d:\n", number_of_primes, calculation_limit);
     return 0;
 }
 
